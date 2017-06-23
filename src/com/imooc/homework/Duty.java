@@ -1,14 +1,19 @@
 package com.imooc.homework;
 
 public class Duty {
-	private String dutyNo;
-	private String dutyName;
+	//成员属性  职务编号、职务名称
+	private String dutyNo;	//职务编号
+	private String dutyName;	//职务名称
 
 	// 无参构造函数
 	public Duty() {
 
 	}
-
+	/**
+	 * 带参构造  实现对职务编号、职务名称赋值
+	 * @param dutyNo
+	 * @param dutyName
+	 */
 	public Duty(String dutyNo, String dutyName) {
 		this.setDutyNo(dutyNo);
 		this.setDutyName(dutyName);
