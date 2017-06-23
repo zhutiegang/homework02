@@ -4,6 +4,7 @@ public class Department {
 	private String departmentNo;
 	private String departmentName;
 	private Employee[] myEmployees;
+	private int myEmployeesNum;
 	
 	public Department(){
 		
@@ -31,11 +32,32 @@ public class Department {
 	}
 
 	public Employee[] getMyEmployees() {
+		if(myEmployees==null){
+			myEmployees=new Employee[200];
+		}
 		return myEmployees;
 	}
 
 	public void setMyEmployees(Employee[] myEmployees) {
 		this.myEmployees = myEmployees;
+	}
+	
+	public int getMyEmployeesNum() {
+		return myEmployeesNum;
+	}
+
+	public void setMyEmployeesNum(int myEmployeesNum) {
+		this.myEmployeesNum = myEmployeesNum;
+	}
+
+	public void addEmployee(Employee employee){
+		for(int i=0;i<this.getMyEmployees().length;i++){
+			if((this.getMyEmployees()[i])==null){
+				this.getMyEmployees()[i]=employee;
+				this.setMyEmployeesNum(i+1);
+				break;
+			}
+		}
 	}
 
 }

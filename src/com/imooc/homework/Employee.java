@@ -17,6 +17,7 @@ public class Employee {
 		this.setSex(sex);
 		this.setDepartment(department);
 		this.setDuty(duty);
+		department.addEmployee(this);
 	}
 
 	public String getName() {
@@ -61,10 +62,9 @@ public class Employee {
 		String str="";
 		str+="姓名:"+this.getName()+"\n";
 		str+="工号:"+this.getWorkNo()+"\n";
+		str+="性别:"+this.getSex()+"\n"; 
 		str+="年龄:"+this.getAge()+"\n";
-		str+="性别:"+this.getSex()+"\n";
-		str+="所属部门:"+this.getDepartment().getDepartmentName()+"\n";
-		str+="职务信息:"+this.getDuty();
+		str+="职务:"+this.getDepartment().getDepartmentName()+this.getDuty().getDutyName();
 		return str;
 	}
 }
